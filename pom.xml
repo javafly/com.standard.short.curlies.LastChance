@@ -23,6 +23,8 @@
   </scm>
 
   <build>
+    <finalName>${project.artifactId}</finalName>
+
     <plugins>
       <!-- Enforce versions of Java and Maven -->
       <plugin>
