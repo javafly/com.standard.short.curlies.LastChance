@@ -4,14 +4,23 @@
  */
 package com.standard.shor.curlies;
 
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.core.Application;
+
 /**
  *
  * @author sbowen
  */
-public class Main {
-  
-  public static void main(String[] args) {
+@ApplicationPath("/foo/")
+@Path("/")
+public class Main extends Application {
     
-  }
-  
+    @GET
+    @Path("/bar/{name}")
+    public String someMethod(@PathParam("name") String name) {
+        return "Hello " + name;
+    }
 }
