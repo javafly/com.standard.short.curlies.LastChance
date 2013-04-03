@@ -1,0 +1,36 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <script type="text/javascript">
+            function submitForm() {
+                $.ajax({
+                    url: '/LastChance/foo/lol',
+                    type: 'POST',
+                    data: $('#form').serialize(),
+                    timeout: 30000, // 30 seconds
+                    contentType: 'application/x-www-form-urlencoded',
+                    success: function(data, textStatus, jqXHR) {
+                        alert('done');
+                    },
+                    error: function(data, textStatus, jqXHR) {
+                        alert('something went wrong');
+                    }
+                });
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <form method="POST" id="form">
+            <label>URL</label><input type="url" name="url" required placeholder="Please enter a valid URL"/>
+            <input type="submit" onclick="submitForm()"/>
+        </form>
+    </body>
+</html>
