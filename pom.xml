@@ -16,10 +16,10 @@
 
   </properties>
 
-  <!--scm>
-    <connection>scm:svn:https://????</connection>
-    <developerConnection>scm:svn:https://???</developerConnection>
-    <url>https://????</url>
+  <scm>
+    <connection>scm:git:https://github.com/javafly/com.standard.short.curlies.LastChance.git</connection>
+    <developerConnection>scm:git:https://github.com/javafly/com.standard.short.curlies.LastChance.git</developerConnection>
+    <url>https://github.com/javafly/com.standard.short.curlies.LastChance</url>
   </scm-->
 
   <build>
