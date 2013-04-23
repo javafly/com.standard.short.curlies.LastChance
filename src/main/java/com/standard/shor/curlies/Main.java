@@ -8,9 +8,8 @@ import com.standard.shor.curlies.domainmodel.Person;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
@@ -31,8 +30,8 @@ import javax.ws.rs.core.Response;
 public class Main extends Application {
   
     //@PersistenceContext(unitName = "primary", type = PersistenceContextType.TRANSACTION)
-    @PersistenceUnit(unitName="primary")
-    private EntityManagerFactory emf;
+    @PersistenceContext(unitName="primary")
+    private EntityManager em;
 
     
     @GET
@@ -62,7 +61,7 @@ public class Main extends Application {
       p.setId(userId);
       p.setGender("M");
       
-      p = emf.createEntityManager().merge(p);
+      p = em.merge(p);
       return Response.ok(p).build();
     }
 }
