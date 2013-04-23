@@ -7,6 +7,7 @@ package com.standard.shor.curlies;
 import com.standard.shor.curlies.domainmodel.Person;
 import java.net.URI;
 import java.net.URISyntaxException;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -19,7 +20,6 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
 
 /**
  *
@@ -27,6 +27,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
  */
 @ApplicationPath("/foo/")
 @Path("/")
+@Stateless
 public class Main extends Application {
   
     @PersistenceContext(unitName = "primary", type = PersistenceContextType.TRANSACTION)
