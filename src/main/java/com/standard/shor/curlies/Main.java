@@ -31,7 +31,7 @@ import javax.ws.rs.core.Response;
 public class Main extends Application {
   
     //@PersistenceContext(unitName = "primary", type = PersistenceContextType.TRANSACTION)
-    @PersistenceUnit
+    @PersistenceUnit(name="primary")
     private EntityManagerFactory emf;
 
     
