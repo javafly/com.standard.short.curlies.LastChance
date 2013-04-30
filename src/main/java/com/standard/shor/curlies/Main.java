@@ -30,8 +30,8 @@ import javax.ws.rs.core.Response;
 public class Main extends Application {
   
     //@PersistenceContext(unitName = "primary", type = PersistenceContextType.TRANSACTION)
-    @PersistenceContext(unitName="primary")
-    private EntityManager em;
+    //@PersistenceContext(unitName="primary")
+    //private EntityManager em;
 
     
     @GET
@@ -53,15 +53,15 @@ public class Main extends Application {
     	return Response.temporaryRedirect(new URI("http://www.google.co.uk")).build();
     }
     
-    @GET
-    @Path("/user/add/{userId}/{name}")
-    public Response addUser(@PathParam("userId") long userId, @PathParam("name") String name) {
-      Person p = new Person();
-      p.setAddress("My House");
-      p.setId(userId);
-      p.setGender("M");
-      
-      p = em.merge(p);
-      return Response.ok(p).build();
-    }
+//    @GET
+//    @Path("/user/add/{userId}/{name}")
+//    public Response addUser(@PathParam("userId") long userId, @PathParam("name") String name) {
+//      Person p = new Person();
+//      p.setAddress("My House");
+//      p.setId(userId);
+//      p.setGender("M");
+//      
+//      p = em.merge(p);
+//      return Response.ok(p).build();
+//    }
 }
