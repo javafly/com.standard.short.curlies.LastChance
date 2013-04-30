@@ -4,12 +4,12 @@
  */
 package com.standard.shor.curlies;
 
-import com.standard.shor.curlies.domainmodel.Person;
 import java.net.URI;
 import java.net.URISyntaxException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.GET;
